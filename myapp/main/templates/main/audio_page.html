@@ -1,0 +1,12 @@
+{% extends 'main/layout.html' %}
+
+{% block content %}
+    <main class="audios">
+        {% for audio in audios %}
+            <label>{{ audio.title }}</label>
+            <audio controls>
+                <source src="{{ audio.audio.url }}">
+            </audio>
+        {% endfor %}
+    </main>
+{% endblock %}

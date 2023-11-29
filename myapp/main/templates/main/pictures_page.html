@@ -1,0 +1,9 @@
+{% extends 'main/layout.html' %}
+
+{% block content %}
+    <main class="pic">
+        {% for pic in pictures %}
+            <a href="{% url 'pic_page' pic.slug %}"><img class="small_pic" src="{{ pic.picture.url }}"></a>
+        {% endfor %}
+    </main>
+{% endblock %}

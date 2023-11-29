@@ -1,0 +1,140 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+#menu_button{
+    color: brown;
+    position: absolute;
+    top: 20px; right: 20px;
+    width: 1vw;
+}
+#menu_button:hover{
+    color: goldenrod;
+}
+.top{
+    width: 80vw;
+    min-width: 600px;
+    height: 8vh;
+    background: #1c1c1c;
+    border-radius: 0 0 24px 24px;
+    border: 1px solid #2e4236;
+    border-top: none;
+    display: flex;
+}
+.top ul{
+    list-style: none;
+    margin: auto;
+    display: flex;
+    gap: 2vw;
+}
+.top ul li, .top ul a{
+    color: #3f5b5c;
+    font-size: 18px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+.top ul li:hover, .top ul a:hover{
+    color: brown;
+}
+.side{
+    width: 10vw;
+    min-width: 200px;
+    height: 40vh;
+    position: fixed;
+    left: -150px; top: 30vh;
+    background: #1c1c1c;
+    border-radius: 0 24px 24px 0;
+    border: 1px solid #2e4236;
+    border-left: none;
+    display: flex;
+    flex-direction: column;
+}
+.side ul{
+    list-style: none;
+    margin: auto 0 auto -10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.side ul li, .side ul a{
+    color: #3f5b5c;
+    text-decoration: none;
+}
+.side ul li:hover, .side ul a:hover{
+    color: brown;
+}
+.content{
+    display: flex;
+    width: 99vw;
+    min-width: 600px;
+    min-height: 92vh;
+}
+.content .player{
+    margin: 50px auto;
+    width: 60vw;
+    border-radius: 24px;
+}
+.content .main{
+    margin: 50px auto;
+    padding: 50px;
+    width: 80vw;
+    min-width: 600px;
+    background: #3f5b5c;
+    border-radius: 24px;
+}
+.content .main h4{
+    text-align: center;
+}
+.content form{
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 30vw;
+    min-height: 10vh;
+    background: #3f5b5c;
+    padding: 50px;
+    border-radius: 24px;
+}
+.content .pic{
+    margin: 50px auto;
+    padding: 50px;
+    width: 80vw;
+    min-width: 400px;
+    min-height: 80vh;
+    background: #3f5b5c;
+    border-radius: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.content .pic .small_pic{
+    width: 250px;
+    border-radius: 12px;
+    border: 5px solid #2e4236;
+}
+.content .pic .small_pic:hover{
+    border: 5px solid brown;
+}
+.content .pic a{
+    margin: auto;
+}
+.content .pic .big_pic{
+    width: 70vw;
+    border-radius: 12px;
+    margin: auto;
+}
+.content .audios{
+    margin: 50px auto;
+    padding: 50px;
+    width: 30vw;
+    min-width: 400px;
+    background: #3f5b5c;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}

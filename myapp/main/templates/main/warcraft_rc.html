@@ -1,0 +1,7 @@
+{% extends 'main/layout.html' %}
+
+{% block content %}
+    <main class="main">
+        {{ text.text|safe|linebreaks }}
+    </main>
+{% endblock %}
