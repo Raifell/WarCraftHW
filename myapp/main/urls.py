@@ -9,4 +9,5 @@ urlpatterns = [
     path('pictures/', views.pictures_page, name='pictures_page'),
     path('add/<str:format_add>/', views.add_page, name='add_page'),
     path('audio/', views.audio_page, name='audio_page'),
+    path('videos/', views.videos_page, name='videos_page'),
 ]

@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.http import Http404
 from .models import *
 from .forms import *
 
@@ -31,8 +32,6 @@ def pictures_page(request):
         'title': 'Pictures',
         'pictures': pictures
     }
-    for i in pictures:
-        print(i.slug)
     return render(request, 'main/pictures_page.html', context)
 
 
@@ -46,6 +45,7 @@ def picture_page(request, pic_slug):
 
 
 def add_page(request, format_add):
+    form = None
     if format_add == 'picture':
         form = AddPictureForm()
         if request.method == 'POST':
@@ -60,6 +60,16 @@ def add_page(request, format_add):
             if form.is_valid():
                 form.save()
                 return redirect('audio_page')
+    elif format_add == 'video':
+        form = AddVideoForm()
+        if request.method == 'POST':
+            form = AddVideoForm(request.POST, request.FILES)
+            if form.is_valid():
+                form.save()
+                return redirect('videos_page')
+    else:
+        raise Http404()
+
     context = {
         'title': 'Add',
         'form': form
@@ -74,3 +84,14 @@ def audio_page(request):
         'audios': audios,
     }
     return render(request, 'main/audio_page.html', context)
+
+
+def videos_page(request):
+    cinematic = Video.objects.filter(format='Cinematic')
+    gameplay = Video.objects.filter(format='Gameplay')
+    context = {
+        'title': 'Videos',
+        'gameplay': gameplay,
+        'cinematic': cinematic,
+    }
+    return render(request, 'main/videos_page.html', context)

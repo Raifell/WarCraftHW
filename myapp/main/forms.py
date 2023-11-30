@@ -21,3 +21,15 @@ class AddAudioForm(forms.ModelForm):
             'audio': 'Аудио',
             'game': 'Игра'
         }
+
+
+class AddVideoForm(forms.ModelForm):
+    class Meta:
+        model = Video
+        fields = ('format', 'title', 'video', 'game')
+        labels = {
+            'format': 'Формат видео',
+            'title': 'Название',
+            'video': 'Видео',
+            'game': 'Игра'
+        }

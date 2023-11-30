@@ -31,11 +31,14 @@ class Picture(models.Model):
 
 
 class Video(models.Model):
+    format = models.CharField('Format', max_length=10, null=True,
+                              choices=(('Cinematic', 'Cinematic'), ('Gameplay', 'Gameplay')))
+    title = models.CharField('Title', max_length=255, null=True)
     video = models.FileField('Video', upload_to='video/%Y/%m/%d')
     game = models.ForeignKey('Game', on_delete=models.DO_NOTHING, verbose_name='Game')
 
     def __str__(self):
-        return self.game.title
+        return '{} - {}'.format(self.game.title, self.title)
 
 
 class Audio(models.Model):

@@ -19,7 +19,7 @@
             <li><a href="{% url 'warcraft_rc' %}">WarCraft RC</a></li>
             <li><a href="{% url 'warcraft_ft' %}">WarCraft FT</a></li>
             <li><a href="{% url 'pictures_page' %}">Галерея</a></li>
-            <li><a href="">Видео</a></li>
+            <li><a href="{% url 'videos_page' %}">Видео</a></li>
             <li><a href="{% url 'audio_page' %}">Аудио</a></li>
         </ul>
     </section>
@@ -27,7 +27,7 @@
         <i id="menu_button" class="fa fa-plus-circle" aria-hidden="true"></i>
         <ul>
             <li><a href="{% url 'add_page' format_add='picture' %}">Добавить Фото</a></li>
-            <li><a href="">Добавить Видео</a></li>
+            <li><a href="{% url 'add_page' format_add='video' %}">Добавить Видео</a></li>
             <li><a href="{% url 'add_page' format_add='audio' %}">Добавить Аудио</a></li>
         </ul>
     </section>

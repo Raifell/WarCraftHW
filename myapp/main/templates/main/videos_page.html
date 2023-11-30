@@ -1,0 +1,22 @@
+{% extends 'main/layout.html' %}
+
+{% block content %}
+    <main class="videos">
+        <h4>Gameplay</h4>
+        <div class="vid">
+            {% for video in gameplay %}
+                <video controls>
+                    <source src="{{ video.video.url }}">
+                </video>
+            {% endfor %}
+        </div>
+        <h4>Cinematic</h4>
+        <div class="vid">
+            {% for video in cinematic %}
+                <video controls>
+                    <source src="{{ video.video.url }}">
+                </video>
+            {% endfor %}
+        </div>
+    </main>
+{% endblock %}
